@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NotesFirebase</string>
+    <string name="photo_description">This is a photo taken by the camera</string>
+</resources>
