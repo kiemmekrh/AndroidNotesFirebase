@@ -8,6 +8,7 @@
     android:padding="16dp"
     tools:context=".AddNoteActivity">
 
+    <!-- Heading -->
     <TextView
         android:id="@+id/addNoteHeading"
         android:layout_width="wrap_content"
@@ -16,8 +17,9 @@
         android:text="Add Note"
         android:textColor="@color/blue"
         android:textSize="24sp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
+    <!-- Save Button -->
     <ImageView
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
@@ -27,8 +29,9 @@
         android:layout_alignTop="@id/addNoteHeading"
         android:layout_marginEnd="8dp"
         android:clickable="true"
-        android:focusable="true"/>
+        android:focusable="true" />
 
+    <!-- Title Input -->
     <EditText
         android:id="@+id/titleEditText"
         android:layout_width="match_parent"
@@ -39,8 +42,9 @@
         android:layout_below="@id/addNoteHeading"
         android:layout_marginBottom="10dp"
         android:background="@drawable/orange_border"
-        android:maxLines="1"/>
+        android:maxLines="1" />
 
+    <!-- Content Input -->
     <EditText
         android:id="@+id/contentEditText"
         android:layout_width="match_parent"
@@ -51,14 +55,41 @@
         android:gravity="top"
         android:hint="Enter the description"
         android:padding="12dp"
-        android:textSize="18sp"/>
+        android:textSize="18sp" />
 
+    <!-- Checkbox for Sharing -->
+    <CheckBox
+        android:id="@+id/cbShareNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentEditText"
+        android:layout_marginTop="10dp"
+        android:text="Share note with others"
+        android:textSize="16sp"
+        android:buttonTint="@color/blue" />
+
+    <!-- Email Input for Sharing -->
+    <EditText
+        android:id="@+id/etSharedEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cbShareNote"
+        android:layout_marginTop="10dp"
+        android:hint="Enter email to share with"
+        android:padding="12dp"
+        android:inputType="textEmailAddress"
+        android:textSize="16sp"
+        android:background="@drawable/orange_border"
+        android:visibility="gone" />
+
+    <!-- Photo Preview -->
     <ImageView
         android:id="@+id/photoImageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/contentEditText"
+        android:layout_below="@id/etSharedEmail"
         android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
         android:contentDescription="@string/photo_description" />
+
 </RelativeLayout>

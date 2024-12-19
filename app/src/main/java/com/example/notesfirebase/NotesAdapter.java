@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHolder> {
@@ -39,10 +38,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
 
         holder.updateButton.setOnClickListener(v -> {
             Intent intent = new Intent(context, AddNoteActivity.class);
-            intent.putExtra("note_id", note.getId());
-            intent.putExtra("note_title", note.getTitle());
-            intent.putExtra("note_content", note.getContent());
-            ((Dashboard) context).startActivityForResult(intent, 1);
+            intent.putExtra("noteId", note.getId()); // Kirim ID catatan untuk diupdate
+            ((Dashboard) context).startActivityForResult(intent, 1); // Mulai aktivitas untuk hasil
         });
 
         holder.deleteButton.setOnClickListener(v -> {
